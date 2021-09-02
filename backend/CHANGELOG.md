@@ -1,3 +1,10 @@
+# [backend-v1.5.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.4.0...backend-v1.5.0) (2021-09-02)
+
+
+### Features
+
+* bla ([40c627a](https://github.com/eye2web/monorepo_test/commit/40c627a85699dfbf8a364dcd30c6df9548108565))
+
 # [backend-v1.4.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.3.0...backend-v1.4.0) (2021-09-02)
 
 
