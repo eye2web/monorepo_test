@@ -2,6 +2,7 @@
     "name": "test",
     "version": "0.0.0-semantic-release",
     "private": true,
+    
     "workspaces": ["frontend", "backend"],
     "devDependencies": {
       "semantic-release": "^15.13.18",
@@ -11,6 +12,7 @@
       "semantic-release": "semantic-release"
     },
     "release": {
+      "repositoryUrl": "git@github.com:eye2web/monorepo_test.git",
       "extends": "semantic-release-monorepo",
       "plugins": [
         "@semantic-release/commit-analyzer",
