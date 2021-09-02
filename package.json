@@ -12,7 +12,8 @@
       "@semantic-release/npm": "v7.1.3"
     },
     "scripts": {
-      "semantic-release": "yarn workspaces run semantic-release"
+      "semantic-release": "yarn workspaces run semantic-release",
+      "build": "yarn workspaces run build"
     },
     "release": {
       "repositoryUrl": "git@github.com:eye2web/monorepo_test.git",

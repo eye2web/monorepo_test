@@ -1,4 +1,12 @@
 {
     "name": "frontend",
+<<<<<<< HEAD
     "version": "1.4.0"
 }
+=======
+    "version": "0.0.0-frontend",
+        "scripts": {
+        "build": "echo frontend"
+      }
+}
+>>>>>>> a7851be... ci: test workspaces scripts
