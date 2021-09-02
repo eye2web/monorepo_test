@@ -1,3 +1,10 @@
+# [frontend-v1.4.1](https://github.com/eye2web/monorepo_test/compare/frontend-v1.4.0...frontend-v1.4.1) (2021-09-02)
+
+
+### Bug Fixes
+
+* resolve merge conflict problem ([efd4dee](https://github.com/eye2web/monorepo_test/commit/efd4dee25db83c2ef8092accdce5f5afcee083db))
+
 # [frontend-v1.4.0](https://github.com/eye2web/monorepo_test/compare/frontend-v1.3.0...frontend-v1.4.0) (2021-09-02)
 
 
