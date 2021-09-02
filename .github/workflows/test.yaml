@@ -30,3 +30,5 @@ jobs:
         run: |
           yarn install
           yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
