@@ -8,7 +8,7 @@
       "semantic-release": "^15.13.18",
       "semantic-release-monorepo": "^7.0.5",
       "@semantic-release/changelog": "^5.0.1",
-      "@semantic-release/github": "^v7.2.3"
+      "@semantic-release/git": "^v9.0.0"
     },
     "scripts": {
       "semantic-release": "yarn workspaces run semantic-release"
@@ -20,9 +20,9 @@
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
         "@semantic-release/changelog",
-        ["@semantic-release/github", {
+        ["@semantic-release/git", {
             "assets": [
-              {"path": "**/CHANGELOG.md", "label": "CHANGELOG"}
+                "CHANGELOG.md"
             ]}]
       ]
     }
