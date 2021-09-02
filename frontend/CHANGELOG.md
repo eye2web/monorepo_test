@@ -1,3 +1,10 @@
+# [frontend-v1.5.0](https://github.com/eye2web/monorepo_test/compare/frontend-v1.4.1...frontend-v1.5.0) (2021-09-02)
+
+
+### Features
+
+* me bla back ([cd8607a](https://github.com/eye2web/monorepo_test/commit/cd8607ababa92caf1cd7bfe8e3165c01d2a2250b))
+
 # [frontend-v1.4.1](https://github.com/eye2web/monorepo_test/compare/frontend-v1.4.0...frontend-v1.4.1) (2021-09-02)
 
 
