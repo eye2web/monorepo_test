@@ -1,0 +1,33 @@
+
+name: Semantic Release
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  semver:
+    container: alpine:latest
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Install git
+        run: apk add --no-cache git bash openrc && git --version
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node
+        run: |
+          apk add --update --no-cache npm && npm --version
+          npm install --global yarn && yarn --version
+
+
+      - name: Release
+        run: |
+          yarn install
+          yarn semantic-release
