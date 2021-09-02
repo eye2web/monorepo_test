@@ -16,14 +16,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Install git
-        run: apk add --no-cache git bash openrc && git --version
+        run: apt-get install -y git bash openrc && git --version
 
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Install Node
         run: |
-          apk add --update --no-cache npm && npm --version
+          apt-get install -y npm && npm --version
           npm install --global yarn && yarn --version
 
 
