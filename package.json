@@ -9,7 +9,7 @@
       "semantic-release-monorepo": "^7.0.5"
     },
     "scripts": {
-      "semantic-release": "semantic-release"
+      "semantic-release": "yarn workspaces run semantic-release"
     },
     "release": {
       "repositoryUrl": "git@github.com:eye2web/monorepo_test.git",
