@@ -1,0 +1,20 @@
+{
+    "name": "test",
+    "version": "0.0.0-semantic-release",
+    "private": true,
+    "workspaces": ["frontend", "backend"],
+    "devDependencies": {
+      "semantic-release": "^15.13.18",
+      "semantic-release-monorepo": "^7.0.5"
+    },
+    "scripts": {
+      "semantic-release": "semantic-release"
+    },
+    "release": {
+      "extends": "semantic-release-monorepo",
+      "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator"
+      ]
+    }
+  }
