@@ -2,6 +2,7 @@
     "name": "backend",
     "version": "1.6.0",
     "scripts": {
-        "build": "echo backend"
+        "build": "echo backend",
+        "docker-build": "../scripts/docker-build.sh"
     }
 }

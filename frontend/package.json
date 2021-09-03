@@ -2,6 +2,7 @@
     "name": "frontend",
     "version": "1.5.0",
     "scripts": {
-        "build": "echo frontend"
+        "build": "echo frontend",
+        "docker-build": "echo na"
     }
 }

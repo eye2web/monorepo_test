@@ -13,7 +13,8 @@
     },
     "scripts": {
       "semantic-release": "yarn workspaces run semantic-release",
-      "build": "yarn workspaces run build"
+      "build": "yarn workspaces run build",
+      "docker-build": "yarn workspaces run docker-build"
     },
     "release": {
       "repositoryUrl": "git@github.com:eye2web/monorepo_test.git",
