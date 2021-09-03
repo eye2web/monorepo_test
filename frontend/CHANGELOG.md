@@ -1,3 +1,10 @@
+# [frontend-v1.6.0](https://github.com/eye2web/monorepo_test/compare/frontend-v1.5.0...frontend-v1.6.0) (2021-09-03)
+
+
+### Features
+
+* create docker build functionality ([3a14146](https://github.com/eye2web/monorepo_test/commit/3a14146f3074a9ee07d8e1485855d262390c9852))
+
 # [frontend-v1.5.0](https://github.com/eye2web/monorepo_test/compare/frontend-v1.4.1...frontend-v1.5.0) (2021-09-02)
 
 
