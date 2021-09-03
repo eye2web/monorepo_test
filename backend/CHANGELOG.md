@@ -1,3 +1,10 @@
+# [backend-v1.8.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.7.0...backend-v1.8.0) (2021-09-03)
+
+
+### Features
+
+* example of how to use container versioning with nginx ([fd33b64](https://github.com/eye2web/monorepo_test/commit/fd33b643fe24649e523a444c002c5d590bf27b2a))
+
 # [backend-v1.7.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.6.0...backend-v1.7.0) (2021-09-03)
 
 
