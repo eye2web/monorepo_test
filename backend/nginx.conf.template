@@ -1,0 +1,23 @@
+events {
+  worker_connections  4096;  ## Default: 1024
+}
+
+http {
+  resolver 127.0.0.11 [::1]:5353 ipv6=off valid=10s;
+
+  include /etc/nginx/mime.types;
+
+  sendfile     on;
+  tcp_nopush   on;
+
+	server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+        add_header Content-Type application/json;
+        return 200 '{"version": "${VERSION}"}';
+    }
+
+	}
+}

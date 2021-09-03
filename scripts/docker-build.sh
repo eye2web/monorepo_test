@@ -27,4 +27,4 @@ COMPONENT_VERSION=$(node -pe 'JSON.parse(process.argv[1]).version' "$(cat packag
 fi
 
 echo "Building docker image with name: ($DOCKER_REPOSITORY$COMPONENT_NAME:$COMPONENT_VERSION)"
-docker build -t $DOCKER_REPOSITORY$COMPONENT_NAME:$COMPONENT_VERSION $DOCKER_FILE
+docker build --build-arg version=${COMPONENT_VERSION} -t $DOCKER_REPOSITORY$COMPONENT_NAME:$COMPONENT_VERSION $DOCKER_FILE
