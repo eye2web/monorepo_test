@@ -1,0 +1,17 @@
+{
+  "name": "watchlist1",
+  "version": "1.0.0",
+  "main": "watchlist.js",
+  "scripts": {
+    "build": "rm -rf dist && NODE_ENV=production babel watchlist.js --out-dir dist --copy-files"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-react": "^7.14.5"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  }
+}
