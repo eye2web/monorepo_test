@@ -1,7 +1,7 @@
 {
   "name": "watchlist",
   "version": "1.0.0",
-  "main": "watchlist.tsx",
+  "main": "index.tsx",
   "scripts": {
     "build": "echo build watchlist"
   },
