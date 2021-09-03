@@ -16,7 +16,7 @@ http {
 
     location / {
         add_header Content-Type application/json;
-        return 200 '{"version": "${VERSION}"}';
+        return 200 '{"version": "${VERSION}", "name": "${NAME}"}';
     }
 
 	}
