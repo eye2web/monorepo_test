@@ -1,3 +1,10 @@
+# [backend-v1.9.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.8.0...backend-v1.9.0) (2021-09-03)
+
+
+### Features
+
+* add name to nginx versioning ([2cbd81f](https://github.com/eye2web/monorepo_test/commit/2cbd81f9f753c522054efca67136d74df171169e))
+
 # [backend-v1.8.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.7.0...backend-v1.8.0) (2021-09-03)
 
 
