@@ -1,3 +1,10 @@
+# [backend-v1.7.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.6.0...backend-v1.7.0) (2021-09-03)
+
+
+### Features
+
+* create docker build functionality ([3a14146](https://github.com/eye2web/monorepo_test/commit/3a14146f3074a9ee07d8e1485855d262390c9852))
+
 # [backend-v1.6.0](https://github.com/eye2web/monorepo_test/compare/backend-v1.5.0...backend-v1.6.0) (2021-09-02)
 
 
