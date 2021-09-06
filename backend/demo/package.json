@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "build": "./gradlew build",
-        "docker-build": "../../scripts/docker-build.sh",
+        "docker-build": "echo na",
         "clean-dist": "./gradlew clean",
         "lint": "echo Part of SonarType",
         "start": "./gradlew bootRun",

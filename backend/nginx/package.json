@@ -3,6 +3,6 @@
     "version": "1.10.0",
     "scripts": {
         "build": "echo backend",
-        "docker-build": "../scripts/docker-build.sh"
+        "docker-build": "../../scripts/docker-publish.sh"
     }
 }
