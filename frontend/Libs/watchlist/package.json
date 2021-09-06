@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.tsx",
   "scripts": {
-    "build": "echo build watchlist"
+    "build": "echo build watchlist",
+    "docker-build": "echo na"
+    
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",

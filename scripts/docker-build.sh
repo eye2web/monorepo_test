@@ -8,23 +8,15 @@ echo "]"
 DOCKER_REPOSITORY=""
 DOCKER_FILE=.
 # Get input parameters
-while getopts v:r:f: flag
+while getopts v:t:r:f: flag
 do
     case "${flag}" in
         v) COMPONENT_VERSION=${OPTARG};;
+        t) COMPONENT_NAME=${OPTARG};;
         r) DOCKER_REPOSITORY=${OPTARG};;
         f) DOCKER_FILE=${OPTARG};;
     esac
 done
-
-# Extract version number from package.json
-echo "Extracting component name from package.json"
-COMPONENT_NAME=$(node -pe 'JSON.parse(process.argv[1]).name' "$(cat package.json)")
-
-if [ -z ${COMPONENT_VERSION+x} ]; then 
-echo "Extracting component version from package.json"
-COMPONENT_VERSION=$(node -pe 'JSON.parse(process.argv[1]).version' "$(cat package.json)")
-fi
 
 echo "Building docker image with name: ($DOCKER_REPOSITORY$COMPONENT_NAME:$COMPONENT_VERSION)"
 docker build --build-arg version=${COMPONENT_VERSION} --build-arg name=${COMPONENT_NAME} -t $DOCKER_REPOSITORY$COMPONENT_NAME:$COMPONENT_VERSION $DOCKER_FILE
