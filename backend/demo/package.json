@@ -1,6 +1,6 @@
 {
     "name": "demoservice",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "build": "./gradlew build",
         "docker-build": "../../scripts/docker-build.sh",
