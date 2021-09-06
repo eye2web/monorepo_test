@@ -1,5 +1,6 @@
 {
     "name": "backend",
+    "group": "test",
     "version": "1.10.0",
     "scripts": {
         "build": "echo backend",

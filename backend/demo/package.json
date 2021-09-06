@@ -1,9 +1,10 @@
 {
     "name": "demoservice",
+    "group": "test",
     "version": "1.0.0",
     "scripts": {
         "build": "./gradlew build",
-        "docker-build": "echo na",
+        "docker-build": "../../scripts/docker-publish.sh",
         "clean-dist": "./gradlew clean",
         "lint": "echo Part of SonarType",
         "start": "./gradlew bootRun",

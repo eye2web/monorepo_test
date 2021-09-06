@@ -4,9 +4,35 @@ plugins {
 	id 'java'
 }
 
-group = 'com.eye2web'
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.eye2web.demo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+bootJar {
+  layered {
+    enabled = true
+
+    application {
+      intoLayer("spring-boot-loader") {
+        include "org/springframework/boot/loader/**"
+      }
+      intoLayer("application")
+    }
+    
+    dependencies {
+      intoLayer("snapshot-dependencies") {
+        include "*:*:*SNAPSHOT"
+      }
+      intoLayer("dependencies")
+    }
+
+    layerOrder = ["dependencies", "spring-boot-loader", "snapshot-dependencies", "application"]
+  }
+}
 
 configurations {
 	compileOnly {

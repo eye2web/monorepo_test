@@ -1,5 +1,6 @@
 {
   "name": "hemoguide",
+  "group": "test",
   "version": "1.1.0",
   "scripts": {
     "build": "yarn run clean-dist && webpack --config=configs/webpack/prod.js",
