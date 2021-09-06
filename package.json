@@ -5,7 +5,8 @@
   "workspaces": [
     "frontend/Apps/*",
     "frontend/Libs/*",
-    "backend"
+    "backend/demo",
+	  "backend/nginx"
   ],
   "devDependencies": {
     "semantic-release": "^17.4.7",
