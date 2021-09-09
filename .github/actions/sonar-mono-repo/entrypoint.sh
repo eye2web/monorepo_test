@@ -12,12 +12,24 @@ if [[ -z "${SONAR_HOST_URL}" ]]; then
   exit 1
 fi
 
+if [[ -z "${SONAR_PROJECT_NAME}" ]]; then
+  echo "This GitHub Action requires the SONAR_HOST_URL env variable."
+  exit 1
+fi
+
+if [[ -z "${SONAR_PROJECTKEY}" ]]; then
+  echo "This GitHub Action requires the SONAR_PROJECTKEY env variable."
+  exit 1
+fi
+
 if [[ -f "${ROOTDIR%/}package.json" ]]; then
   echo "The given project root does not contain a package.json."
   exit 1
 fi
 
+workspaces=( $(jq -r '.workspaces[]' ${ROOTDIR%/}package.json) )
 
-
-
-# sonar-scanner -Dsonar.projectBaseDir=${} ${INPUT_ARGS} 
+for filepath in "${workspaces[@]}" ; do
+    name=( $(jq -r '.name' ${filepath}/package.json) )
+    echo sonar-scanner -Dsonar.projectBaseDir=${filepath} -Dsonar.projectName="${SONAR_PROJECT_NAME} - ${name}" -Dsonar.projectKey=${INPUT_SONAR_PROJECTKEY} ${INPUT_ARGS} 
+done
