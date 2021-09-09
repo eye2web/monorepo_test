@@ -32,3 +32,10 @@ jobs:
           yarn semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: SonarQube
+        id: sq
+        uses: ./.github/actions/sonar-mono-repo
+        with:
+          root: 'Rootingkje'
+
