@@ -13,7 +13,7 @@ if [[ -z "${SONAR_HOST_URL}" ]]; then
 fi
 
 if [[ -z "${SONAR_PROJECT_NAME}" ]]; then
-  echo "This GitHub Action requires the SONAR_HOST_URL env variable."
+  echo "This GitHub Action requires the SONAR_PROJECT_NAME env variable."
   exit 1
 fi
 

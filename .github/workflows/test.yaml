@@ -39,5 +39,7 @@ jobs:
         env:
           SONAR_TOKEN: "bla"
           SONAR_HOST_URL: "bla"
+          SONAR_PROJECT_NAME: "bla"
+          SONAR_PROJECTKEY: "bla"
           ROOTDIR: "."
           
