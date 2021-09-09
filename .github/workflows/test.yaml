@@ -37,7 +37,7 @@ jobs:
         id: sq
         uses: ./.github/actions/sonar-mono-repo
         env:
-          SONAR_TOKEN: ""
-          SONAR_HOST_URL: ""
+          SONAR_TOKEN: "bla"
+          SONAR_HOST_URL: "bla"
           ROOTDIR: "."
           

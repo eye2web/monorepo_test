@@ -12,7 +12,7 @@ if [[ -z "${SONAR_HOST_URL}" ]]; then
   exit 1
 fi
 
-if [[ -f "${INPUT_ROOTDIR%/}package.json" ]]; then
+if [[ -f "${ROOTDIR%/}package.json" ]]; then
   echo "The given project root does not contain a package.json."
   exit 1
 fi
