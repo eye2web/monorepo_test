@@ -1,0 +1,10 @@
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  root:  # id of input
+    description: 'Set the root of the project, defaults to .'
+    required: false
+    default: '.'
+runs:
+  using: 'node12'
+  main: 'dist/git index.js'
