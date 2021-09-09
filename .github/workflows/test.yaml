@@ -24,8 +24,7 @@ jobs:
       - name: Install Node
         run: |
           npm install --global yarn && yarn --version
-
-
+          
       - name: Release
         run: |
           yarn install
