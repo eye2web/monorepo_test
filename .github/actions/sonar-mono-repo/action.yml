@@ -1,10 +1,17 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Sonar Yarn Workspaces'
+description: 'Create a sonar report per yrn workspace'
+
 inputs:
   root:  # id of input
-    description: 'Set the root of the project, defaults to .'
+    description: 'The directory of the package.json containing the workspaces entry, defaults to .'
     required: false
     default: '.'
+  args:
+    description: Additional arguments to the sonar-scanner
+    required: false
+branding:
+  icon: check
+  color: green
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: docker
+  image: Dockerfile
