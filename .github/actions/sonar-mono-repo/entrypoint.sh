@@ -27,9 +27,13 @@ if [[ -f "${ROOTDIR%/}package.json" ]]; then
   exit 1
 fi
 
+
 workspaces=( $(jq -r '.workspaces[]' ${ROOTDIR%/}package.json) )
 
 for filepath in "${workspaces[@]}" ; do
-    name=( $(jq -r '.name' ${filepath}/package.json) )
-    echo sonar-scanner -Dsonar.projectBaseDir=${filepath} -Dsonar.projectName="${SONAR_PROJECT_NAME} - ${name}" -Dsonar.projectKey=${INPUT_SONAR_PROJECTKEY} ${INPUT_ARGS} 
+    # Extract version number from package.json
+    echo "Extracting component name from package.json"
+    COMPONENT_NAME=$(node -pe 'JSON.parse(process.argv[1]).name' "$(cat ${filepath}/package.json)")
+
+    echo sonar-scanner -Dsonar.projectBaseDir=${filepath} -Dsonar.projectName="${SONAR_PROJECT_NAME} - ${COMPONENT_NAME}" -Dsonar.projectKey=${INPUT_SONAR_PROJECTKEY} ${INPUT_ARGS} 
 done
