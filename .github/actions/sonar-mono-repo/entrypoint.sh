@@ -27,7 +27,7 @@ if [[ -z "${ROOTDIR}" ]]; then
   ROOTDIR="."
 fi
 
-if [[ -f "${ROOTDIR}/package.json" ]]; then
+if [[ -f "${ROOTDIR%/}package.json" ]]; then
   echo "The given project root does not contain a package.json."
   exit 1
 fi
