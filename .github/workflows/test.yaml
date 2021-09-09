@@ -36,6 +36,8 @@ jobs:
       - name: SonarQube
         id: sq
         uses: ./.github/actions/sonar-mono-repo
-        with:
-          root: 'Rootingkje'
-
+        env:
+          SONAR_TOKEN: ""
+          SONAR_HOST_URL: ""
+          ROOTDIR: "."
+          
