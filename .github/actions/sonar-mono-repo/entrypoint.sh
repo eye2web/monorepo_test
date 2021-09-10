@@ -40,16 +40,18 @@ unset JAVA_HOME
 
 unset SONAR_JAVA_OPTS
 
-if test -n "$(find ${filepath} -maxdepth 15 -name '*.java' -print -quit)"
-then
-    echo ${filepath}
-    SONAR_JAVA_OPTS="-Dsonar.java.binaries=./build/classes/java/main \
-                   -Dsonar.java.test.binaries=./build/classes/java/test \
-                   -Dsonar.java.source=11"
-fi
 
 for filepath in "${workspaces[@]}" ; do
     COMPONENT_NAME=( $(jq -r '.name' ${filepath}/package.json) )
+    
+    if test -n "$(find ${filepath} -maxdepth 15 -name '*.java' -print -quit)"
+    then
+        echo ${filepath}
+        SONAR_JAVA_OPTS="-Dsonar.java.binaries=./build/classes/java/main \
+                      -Dsonar.java.test.binaries=./build/classes/java/test \
+                      -Dsonar.java.source=11"
+    fi
+
     echo sonar-scanner  \
       -Dsonar.projectBaseDir=${filepath} \
       -Dsonar.projectName="${SONAR_PROJECT_NAME}-${COMPONENT_NAME}" \
