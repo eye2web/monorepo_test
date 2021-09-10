@@ -39,5 +39,5 @@ workspaces=( $(jq -r '.workspaces[]' "${SONAR_SOURCE_DIR}/package.json") )
 
 for filepath in "${workspaces[@]}" ; do
     COMPONENT_NAME=( $(jq -r '.name' ${filepath}/package.json) )
-    echo sonar-scanner  -Dsonar.projectBaseDir=${filepath} -Dsonar.projectName="${SONAR_PROJECT_NAME} - ${COMPONENT_NAME}" -Dsonar.projectKey=${SONAR_PROJECTKEY} ${INPUT_ARGS} 
+    sonar-scanner  -Dsonar.projectBaseDir=${filepath} -Dsonar.projectName="${SONAR_PROJECT_NAME} - ${COMPONENT_NAME}" -Dsonar.projectKey=${SONAR_PROJECTKEY} ${INPUT_ARGS} 
 done
