@@ -34,6 +34,7 @@ jobs:
 
       - name: Yarn build
         run: |
+          yarn install
           yarn build
 
       - name: SonarQube
