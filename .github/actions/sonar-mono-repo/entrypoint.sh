@@ -44,6 +44,8 @@ then
     SONAR_JAVA_OPTS="-Dsonar.java.binaries=./build/classes/java/main \
                    -Dsonar.java.test.binaries=./build/classes/java/test \
                    -Dsonar.java.source=11"
+    else
+    SONAR_JAVA_OPTS=
 fi
 
 for filepath in "${workspaces[@]}" ; do
