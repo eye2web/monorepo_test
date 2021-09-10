@@ -38,12 +38,11 @@ workspaces=( $(jq -r '.workspaces[]' "${SONAR_SOURCE_DIR}/package.json") )
 
 unset JAVA_HOME
 
-unset SONAR_JAVA_OPTS
-
-
 for filepath in "${workspaces[@]}" ; do
+    unset SONAR_JAVA_OPTS
+
     COMPONENT_NAME=( $(jq -r '.name' ${filepath}/package.json) )
-    
+
     if test -n "$(find ${filepath} -maxdepth 15 -name '*.java' -print -quit)"
     then
         echo ${filepath}
