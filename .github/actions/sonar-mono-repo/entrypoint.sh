@@ -1,6 +1,6 @@
-# #!/bin/bash
+#!/bin/bash
 
-# set -e
+set -e
 
 # if [[ -z "${SONAR_TOKEN}" ]]; then
 #   echo "This GitHub Action requires the SONAR_TOKEN env variable."
@@ -56,8 +56,6 @@
 #       ${SONAR_JAVA_OPTS}
 # done
 
-!/bin/bash
-set -e
 
 SONAR_SOURCE_DIR=.
 
