@@ -54,6 +54,6 @@ for filepath in "${workspaces[@]}" ; do
     sonar-scanner  \
       -Dsonar.projectBaseDir=${filepath} \
       -Dsonar.projectName="${SONAR_PROJECT_NAME}-${COMPONENT_NAME}" \
-      -Dsonar.projectKey=${SONAR_PROJECTKEY} ${INPUT_ARGS} \
+      -Dsonar.projectKey=${SONAR_PROJECTKEY}.${COMPONENT_NAME} \
       ${SONAR_JAVA_OPTS}
 done
