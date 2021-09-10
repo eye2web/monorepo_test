@@ -29,7 +29,7 @@ if [[ -z "${SONAR_SOURCE_DIR}" ]]; then
 fi
 
 if [[ -f "${SONAR_SOURCE_DIR%/}package.json" ]]; then
-  echo "The given project root does not contain a package.json."
+  echo "The given project root does not contain a package.json. ${SONAR_SOURCE_DIR%/}package.json"
   exit 1
 fi
 
