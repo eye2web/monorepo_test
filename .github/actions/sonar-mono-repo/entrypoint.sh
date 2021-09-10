@@ -25,6 +25,7 @@ fi
 if [[ -z "${SONAR_SOURCE_DIR}" ]]; then
   echo "This GitHub Action ROOTDIR not set, referting to default '.'"
   ROOTDIR="."
+  ls -als
 fi
 
 if [[ -f "${SONAR_SOURCE_DIR%/}package.json" ]]; then
