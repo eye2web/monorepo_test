@@ -56,8 +56,7 @@
 #       ${SONAR_JAVA_OPTS}
 # done
 
-#!/bin/bash
-
+!/bin/bash
 set -e
 
 SONAR_SOURCE_DIR=.
