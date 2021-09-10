@@ -21,16 +21,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Node
-        run: |
-          npm install --global yarn && yarn --version
+      # - name: Install Node
+      #   run: |
+      #     npm install --global yarn && yarn --version
           
-      - name: Release
-        run: |
-          yarn install
-          yarn semantic-release
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Release
+      #   run: |
+      #     yarn install
+      #     yarn semantic-release
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: SonarQube
         id: sq
