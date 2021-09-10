@@ -39,13 +39,18 @@ workspaces=( $(jq -r '.workspaces[]' "${SONAR_SOURCE_DIR}/package.json") )
 
 unset JAVA_HOME
 
+if test -n "$(find ${filepath} -maxdepth 15 -name '*.java' -print -quit)"
+then
+    SONAR_JAVA_OPTS="-Dsonar.java.binaries=${filepath}/build/classes/java/main \
+                   -Dsonar.java.test.binaries${filepath}/build/classes/java/test \
+                   -Dsonar.java.source=11"
+fi
+
 for filepath in "${workspaces[@]}" ; do
     COMPONENT_NAME=( $(jq -r '.name' ${filepath}/package.json) )
     sonar-scanner  \
       -Dsonar.projectBaseDir=${filepath} \
       -Dsonar.projectName="${SONAR_PROJECT_NAME} - ${COMPONENT_NAME}" \
       -Dsonar.projectKey=${SONAR_PROJECTKEY} ${INPUT_ARGS} \
-      -Dsonar.java.binaries=${filepath}/build/classes/java/main
-      -Dsonar.java.test.binaries${filepath}/build/classes/java/test
-      -Dsonar.java.source=11
+      ${SONAR_JAVA_OPTS}
 done
