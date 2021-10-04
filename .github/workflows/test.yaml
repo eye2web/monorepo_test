@@ -32,13 +32,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+      - name: Yarn build
+        run: |
+          yarn install
+          yarn build
+
       - name: SonarQube
         id: sq
         uses: ./.github/actions/sonar-mono-repo
         env:
-          SONAR_TOKEN: "bla"
-          SONAR_HOST_URL: "bla"
-          SONAR_PROJECT_NAME: "bla"
-          SONAR_PROJECTKEY: "bla"
-          ROOTDIR: "."
+          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+          SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
+          SONAR_PROJECT_NAME: ${{secrets.SONAR_PROJECT_NAME}}
+          SONAR_PROJECTKEY: ${{secrets.SONAR_PROJECTKEY}}
+          SONAR_SOURCE_DIR: ${{secrets.SONAR_SOURCE_DIR}}
           

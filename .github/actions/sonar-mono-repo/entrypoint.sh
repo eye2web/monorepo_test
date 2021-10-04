@@ -22,21 +22,38 @@ if [[ -z "${SONAR_PROJECTKEY}" ]]; then
   exit 1
 fi
 
-if [[ -z "${ROOTDIR}" ]]; then
+if [[ -z "${SONAR_SOURCE_DIR}" ]]; then
   echo "This GitHub Action ROOTDIR not set, referting to default '.'"
   ROOTDIR="."
+  ls -als
 fi
 
-if [[ -f "${ROOTDIR%/}package.json" ]]; then
-  echo "The given project root does not contain a package.json."
+if [[ -f "${SONAR_SOURCE_DIR%/}package.json" ]]; then
+  echo "The given project root does not contain a package.json. ${SONAR_SOURCE_DIR%/}package.json"
   exit 1
 fi
 
 
+workspaces=( $(jq -r '.workspaces[]' "${SONAR_SOURCE_DIR}/package.json") )
 
-workspaces=( $(jq -r '.workspaces[]' "${ROOTDIR}/package.json") )
+unset JAVA_HOME
 
 for filepath in "${workspaces[@]}" ; do
+    unset SONAR_JAVA_OPTS
+
     COMPONENT_NAME=( $(jq -r '.name' ${filepath}/package.json) )
-    echo sonar-scanner  -Dsonar.projectBaseDir=${filepath} -Dsonar.projectName="${SONAR_PROJECT_NAME} - ${COMPONENT_NAME}" -Dsonar.projectKey=${SONAR_PROJECTKEY} ${INPUT_ARGS} 
+
+    if test -n "$(find ${filepath} -maxdepth 15 -name '*.java' -print -quit)"
+    then
+        echo ${filepath}
+        SONAR_JAVA_OPTS="-Dsonar.java.binaries=./build/classes/java/main \
+                      -Dsonar.java.test.binaries=./build/classes/java/test \
+                      -Dsonar.java.source=11"
+    fi
+
+    sonar-scanner  \
+      -Dsonar.projectBaseDir=${filepath} \
+      -Dsonar.projectName="${SONAR_PROJECT_NAME}-${COMPONENT_NAME}" \
+      -Dsonar.projectKey=${SONAR_PROJECTKEY}.${COMPONENT_NAME} \
+      ${SONAR_JAVA_OPTS}
 done
